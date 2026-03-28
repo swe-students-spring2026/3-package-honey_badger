@@ -20,5 +20,12 @@ def block_text(text, scale=1):
 
     if text == "":
         return ""
-    
-    
+
+def reverse_text(text):
+    length=len(text)
+    string1=""
+    counter=length-1
+    while(counter>=0):
+        string1=string1+text[counter]
+        counter=counter-1
+    return string1

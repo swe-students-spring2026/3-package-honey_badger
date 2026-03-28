@@ -22,6 +22,15 @@ def block_text(text, scale=1):
         return ""
 
 def reverse_text(text):
+    """
+    reverse text for example "hello" becomes "olleh"
+
+    Parameters:
+    text(str): This is the input text to reverse
+
+    Returns:
+    the string text with order of letters reversed
+    """
     length=len(text)
     string1=""
     counter=length-1

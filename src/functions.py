@@ -10,8 +10,20 @@ def block_text(text, scale=1):
     
     Returns:
     str: Capitalized block font representation of the input text.
+
+    Raises:
+    TypeError: If text is not a string or scale is not an integer.
+    ValueError: If scale is less than 1 or text contains unsupported characters.
     """
-    spacing = max(1, scale//2)  # Calculate spacing based on scale
+    if not isinstance(text, str):
+        raise TypeError("Text must be a string.")
+    if not isinstance(scale, int):
+        raise TypeError("Scale must be an integer.")
+    if scale < 1:
+        raise ValueError("Scale must be at least 1.")
+
+    width_scale = scale * 2  # Calculate width scaling factor
+    spacing = max(1, width_scale//3)  # Calculate spacing based on scale
     text = text.upper()  # Convert text to uppercase
 
     for char in text:
@@ -20,5 +32,28 @@ def block_text(text, scale=1):
 
     if text == "":
         return ""
-    
-    
+
+    character_height = len(FONT[text[0]])  # Get the height of the characters
+    output = []
+
+    for row in range(character_height):
+        line_part = []
+
+        for char in text:
+            bitmap_row = FONT[char][row]
+            rendered = ""
+
+            for bit in bitmap_row:
+                if bit == '1':
+                    rendered += '#' * width_scale
+                else:
+                    rendered += ' ' * width_scale
+
+            line_part.append(rendered)
+
+        line = (" " * spacing).join(line_part)  # Join characters with spacing
+
+        for _ in range(scale):  # Repeat each line according to the scale
+            output.append(line.rstrip())  # Remove trailing spaces
+
+    return "\n".join(output)

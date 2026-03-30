@@ -90,6 +90,9 @@ def reverse_text(text):
 
     Returns:
     the string text with order of letters reversed
+
+    Raises:
+    TypeError: If text is not a string
     """
     if not isinstance(text,str):
         raise TypeError("Reverse Test Function takes a string as an argument")

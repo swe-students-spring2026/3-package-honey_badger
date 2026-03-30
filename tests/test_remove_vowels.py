@@ -1,5 +1,5 @@
 import pytest
-from src.functions import remove_vowels
+from src.textmodifier.functions import remove_vowels
 
 def test_remove_vowels_keeps_y_default():
     #Assertion 1: 'y' should not be removed when remove_y is False

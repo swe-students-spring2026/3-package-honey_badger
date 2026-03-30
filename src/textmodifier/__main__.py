@@ -1,4 +1,4 @@
-from src import functions as fn
+from textmodifier import functions as fn
 
 def main():
 

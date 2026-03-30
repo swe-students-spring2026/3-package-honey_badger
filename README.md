@@ -1,4 +1,4 @@
-[![CI](https://github.com/swe-students-spring2026/3-package-honey_badger/actions/workflows/python-tests.yml/badge.svg)]
+[![CI](https://github.com/swe-students-spring2026/3-package-honey_badger/actions/workflows/build.yaml/badge.svg)](https://github.com/swe-students-spring2026/3-package-honey_badger/actions/workflows/build.yaml)
 
 # Text Modifier Package
 

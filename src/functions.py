@@ -79,7 +79,6 @@ def remove_vowels(text, remove_y=False):
     vowels = "AEIOUaeiou"
     if remove_y:
         vowels += "Yy"
-
     return ''.join(char for char in text if char not in vowels)
 
 def reverse_text(text):

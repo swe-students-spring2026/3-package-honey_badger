@@ -91,10 +91,15 @@ def reverse_text(text):
     Returns:
     the string text with order of letters reversed
     """
+    if not isinstance(text,str):
+        raise TypeError("Reverse Test Function takes a string as an argument")
     length=len(text)
-    string1=""
-    counter=length-1
-    while(counter>=0):
-        string1=string1+text[counter]
-        counter=counter-1
-    return string1
+    if(text==""):
+        return ""
+    else:
+        string1=""
+        counter=length-1
+        while(counter>=0):
+            string1=string1+text[counter]
+            counter=counter-1
+        return string1

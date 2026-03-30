@@ -1,4 +1,4 @@
-from src.blockfont import FONT
+from textmodifier.blockfont import FONT
 
 def block_text(text, scale=1):
     """

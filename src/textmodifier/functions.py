@@ -57,3 +57,28 @@ def block_text(text, scale=1):
             output.append(line.rstrip())  # Remove trailing spaces
 
     return "\n".join(output)
+
+def remove_vowels(text, remove_y=False):
+    """
+    Remove vowels from the input text.
+    
+    Parameters:
+    text (str): The input text from which to remove vowels.
+    remove_y (bool): Whether to also remove 'y' and 'Y'. Default is False.
+    
+    Returns:
+    str: The input text with vowels removed.
+
+    Raises:
+    TypeError: If text is not a string or remove_y is not a boolean.
+    """
+    if not isinstance(text, str):
+        raise TypeError("Text must be a string.")
+    if not isinstance(remove_y, bool):
+        raise TypeError("remove_y must be a boolean.")
+
+    vowels = "AEIOUaeiou"
+    if remove_y:
+        vowels += "Yy"
+
+    return ''.join(char for char in text if char not in vowels)

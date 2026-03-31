@@ -1,6 +1,6 @@
 import pytest
 
-from src.textmodifier.functions import block_text
+from textmodifier.functions import block_text
 
 
 def test_block_text_renders_expected_output():

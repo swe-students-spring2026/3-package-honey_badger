@@ -3,7 +3,9 @@ from textmodifier.functions import (
     remove_vowels,
     reverse_text,
     fixed_length_encode,
+    fixed_length_decode,
 )
+import ast
 
 
 def print_divider():
@@ -128,6 +130,27 @@ def demo_fixed_length_encode():
     print(repr(fixed_length_encode("")))
 
 
+def demo_fixed_length_decode():
+    print_title("FIXED LENGTH DECODE DEMONSTRATION")
+
+    print("Example 1: Default decoding")
+    mapping = {'e': '00', 'h': '01', 'l': '10', 'o': '11'}
+    print(fixed_length_decode('0100101011', mapping))
+
+    print("\nExample 2: Custom bit style decoding")
+    mapping_banana = {'a': '--', 'b': '-X', 'n': 'X-'}
+    print(fixed_length_decode("-X--X---X---", mapping_banana))
+
+    print("\nExample 3: Single character edge case")
+    print(fixed_length_decode('00000', {'a': '0'}))
+
+    print("\nExample 4: From Encode to Decode")
+    text = "This is the msg to decode!"
+    encoded_text, generated_mapping = fixed_length_encode(text)
+    print("Encoded  : " + encoded_text)
+    print("Decoded  : " + fixed_length_decode(encoded_text, generated_mapping))
+
+
 def run_all_demos():
     print_title("TEXTMODIFIER PACKAGE EXAMPLE PROGRAM")
     print("This example program demonstrates the full functionality")
@@ -137,6 +160,7 @@ def run_all_demos():
     demo_remove_vowels()
     demo_reverse_text()
     demo_fixed_length_encode()
+    demo_fixed_length_decode()
 
     print_title("END OF DEMONSTRATION")
     print("All package functions were demonstrated successfully.")
@@ -149,7 +173,8 @@ def interactive_menu():
         print("2. Remove vowels")
         print("3. Reverse text")
         print("4. Fixed length encode")
-        print("5. Run full demo")
+        print("5. Fixed length decode")
+        print("6. Run full demo")
         print("0. Exit")
 
         choice = input("\nEnter your choice: ").strip()
@@ -195,6 +220,17 @@ def interactive_menu():
                 print("Error:", e)
 
         elif choice == "5":
+            text = input("Enter encoded text (bits): ").strip()
+            mapping_str = input("Enter mapping dictionary (e.g., {'a': '00', 'b': '01'}): ").strip()
+            try:
+                mapping = ast.literal_eval(mapping_str)
+                print(fixed_length_decode(text, mapping))
+            except (SyntaxError, ValueError):
+                print("Error: Invalid dictionary format. Please ensure it is like {'key': 'value'}.")
+            except Exception as e:
+                print("Error:", e)
+
+        elif choice == "6":
             run_all_demos()
 
         elif choice == "0":

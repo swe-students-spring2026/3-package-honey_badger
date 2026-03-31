@@ -11,7 +11,8 @@ requires-python = ">=3.11"
 license = { file = "LICENSE" }
 authors = [
   { name = "Minho Eune" },
-  { name = "Alejandro Fiestas" }
+  { name = "Alejandro Fiestas" },
+  { name = "Diya Greben" }
 ]
 keywords = ["python", "text", "package", "utilities"]
 classifiers = [

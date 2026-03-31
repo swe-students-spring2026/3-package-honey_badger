@@ -1,10 +1,4 @@
-from textmodifier.functions import (
-    block_text,
-    remove_vowels,
-    reverse_text,
-    fixed_length_encode,
-    fixed_length_decode,
-)
+from textmodifier import *
 import ast
 
 

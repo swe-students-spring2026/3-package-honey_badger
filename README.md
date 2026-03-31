@@ -16,6 +16,15 @@
 
 [Ani Guduru](https://github.com/AniGuduru)
 
+## Description
+The Text Modifier Package is a Python library that provides fun and useful text transformations. It allows developers to manipulate text in creative ways, such as rendering block-style fonts, encoding and decoding messages, removing vowels, and reversing strings.
+
+## Configuration
+
+This project does not require any environment variables or external configuration.
+
+No `.env` file or database setup is needed to run the package.
+
 ## Features
 ### Block Font
 
@@ -130,7 +139,7 @@ The function `reverse_text(text)` takes a string and returns a new string with a
 
 This function works for all characters in a string, including numbers ("5"), letters ("h"), whitespace (" "), and special characters ("!").
 
-#### Example Program
+#### Example Usage:
 
 ```python
 from textmodifier import reverse_text
@@ -157,7 +166,12 @@ To install the package with `pipenv`, run:
 pipenv install honey-badger-text-modifier
 ```
 
-To try the package with the included demo program, run `example.py` from the project root:
+## Example Program
+
+A complete example program demonstrating all package functionality is included:
+[View example](./example.py)
+
+To run it:
 
 ```bash
 python example.py
@@ -174,12 +188,18 @@ To check how much of the codebase is covered by unit tests, run:
 ## Continuous integration
 This project has a continuous integration workflow that builds and runs unit tests automatically with every _pull request_ of the code to GitHub.
 
-## Development Setup
+## Developer Setup
 
 To contribute or work on the project locally:
 
-```bash
-pipenv install
-pipenv shell
-pytest
-```
+1. Install dependencies:
+   pipenv install
+
+2. Activate environment:
+   pipenv shell
+
+3. Run tests:
+   pytest
+
+4. Build package:
+   python -m build

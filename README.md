@@ -2,7 +2,7 @@
 
 # Text Modifier Package
 
-[PyPI URL](https://pypi.org/project/honey-badger-text-modifier/0.1.0/)
+[PyPI URL](https://pypi.org/project/honey-badger-text-modifier/0.1.1/)
 
 ## Built by
 

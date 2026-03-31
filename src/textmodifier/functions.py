@@ -33,7 +33,6 @@ def block_text(text, scale=1):
 
     if text == "":
         return ""
-
     character_height = len(FONT[text[0]])  # Get the height of the characters
     output = []
 
@@ -81,9 +80,33 @@ def remove_vowels(text, remove_y=False):
     vowels = "AEIOUaeiou"
     if remove_y:
         vowels += "Yy"
-
     return ''.join(char for char in text if char not in vowels)
 
+def reverse_text(text):
+    """
+    reverse text for example "hello" becomes "olleh"
+
+    Parameters:
+    text(str): This is the input text to reverse
+
+    Returns:
+    the string text with order of letters reversed
+
+    Raises:
+    TypeError: If text is not a string
+    """
+    if not isinstance(text,str):
+        raise TypeError("Reverse Test Function takes a string as an argument")
+    length=len(text)
+    if(text==""):
+        return ""
+    else:
+        string1=""
+        counter=length-1
+        while(counter>=0):
+            string1=string1+text[counter]
+            counter=counter-1
+        return string1
 
 def fixed_length_encode(text, only_code=False, ignore_case=False, bit_style=("1", "0")) :
    """
@@ -133,4 +156,3 @@ def fixed_length_encode(text, only_code=False, ignore_case=False, bit_style=("1"
    else:
        return (str(codes) + "\n" + out)
   
-

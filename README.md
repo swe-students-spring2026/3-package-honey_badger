@@ -174,3 +174,12 @@ To check how much of the codebase is covered by unit tests, run:
 ## Continuous integration
 This project has a continuous integration workflow that builds and runs unit tests automatically with every _pull request_ of the code to GitHub.
 
+## Development Setup
+
+To contribute or work on the project locally:
+
+```bash
+pipenv install
+pipenv shell
+pytest
+```

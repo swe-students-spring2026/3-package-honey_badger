@@ -5,7 +5,9 @@
 ## Built by
 
 [Minho Eune](https://github.com/minhoeune)
+
 [Alejandro Fiestas](https://github.com/avf8449)
+
 [Diya Greben](https://github.com/diyagreben)
 
 
@@ -64,7 +66,7 @@ print(remove_vowels("Yellow puppy"))
 # Modified behavior (removes 'y')
 print(remove_vowels("Yellow puppy", remove_y=True))
 # Output: "llw ppp"
-
+```
 
 ## How to run unit tests
 Simple unit tests are included within the 'test' directory. This project uses pytest. To run the tests:

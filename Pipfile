@@ -9,14 +9,11 @@ twine = "*"
 build = "*"
 
 [dev-packages]
-<<<<<<< HEAD
 build = "*"
 twine = "*"
 
 [requires]
 python_version = "3.13"
-=======
 
 [requires]
 python_version = "3.12"
->>>>>>> main

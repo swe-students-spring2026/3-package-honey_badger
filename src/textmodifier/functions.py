@@ -23,8 +23,7 @@ def block_text(text, scale=1):
     if scale < 1:
         raise ValueError("Scale must be at least 1.")
 
-    width_scale = scale * 2  # Calculate width scaling factor
-    spacing = max(1, width_scale//3)  # Calculate spacing based on scale
+    spacing = max(1, scale//2)  # Calculate spacing based on scale
     text = text.upper()  # Convert text to uppercase
 
     for char in text:
@@ -45,9 +44,9 @@ def block_text(text, scale=1):
 
             for bit in bitmap_row:
                 if bit == '1':
-                    rendered += '#' * width_scale
+                    rendered += '#' * scale
                 else:
-                    rendered += ' ' * width_scale
+                    rendered += ' ' * scale
 
             line_part.append(rendered)
 

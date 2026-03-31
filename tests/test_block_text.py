@@ -6,11 +6,11 @@ from textmodifier.functions import block_text
 def test_block_text_renders_expected_output():
     expected = "\n".join(
         [
-            "  ##",
-            "##  ##",
-            "######",
-            "##  ##",
-            "##  ##",
+            " ###",
+            "#   #",
+            "#####",
+            "#   #",
+            "#   #",
         ]
     )
 
@@ -24,16 +24,16 @@ def test_block_text_is_case_insensitive():
 def test_block_text_applies_scaling_to_width_and_height():
     expected = "\n".join(
         [
-            "    ####",
-            "    ####",
-            "####    ####",
-            "####    ####",
-            "############",
-            "############",
-            "####    ####",
-            "####    ####",
-            "####    ####",
-            "####    ####",
+            "  ######",
+            "  ######",
+            "##      ##",
+            "##      ##",
+            "##########",
+            "##########",
+            "##      ##",
+            "##      ##",
+            "##      ##",
+            "##      ##",
         ]
     )
 

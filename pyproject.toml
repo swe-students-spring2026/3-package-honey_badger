@@ -10,7 +10,8 @@ readme = "README.md"
 requires-python = ">=3.11"
 license = { file = "LICENSE" }
 authors = [
-  { name = "Minho Eune" }
+  { name = "Minho Eune" },
+  { name = "Alejandro Fiestas" }
 ]
 keywords = ["python", "text", "package", "utilities"]
 classifiers = [

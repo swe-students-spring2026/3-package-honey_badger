@@ -6,6 +6,7 @@
 
 [Minho Eune](https://github.com/minhoeune)
 [Alejandro Fiestas](https://github.com/avf8449)
+[Diya Greben](https://github.com/diyagreben)
 
 
 ## Features
@@ -41,6 +42,28 @@ Arguments:
 - `ignore_case` (bool): If True, ignores capitalization (default is False).
 
 - `bit_style` (tuple): Allows custom characters to represent "1" and "0".
+
+### Remove Vowels
+
+The function `remove_vowels(text, remove_y=False)` takes a string and returns a new string with all the vowels (a, e, i, o, u) removed. 
+
+Arguments:
+
+- `text` (str): The input text from which to remove vowels.
+
+- `remove_y` (bool): If True, the function will also remove the letters 'y' and 'Y' from the text (default is False).
+
+#### Example Usage:
+```python
+from src.textmodifier.functions import remove_vowels
+
+# Default behavior (keeps 'y')
+print(remove_vowels("Yellow puppy"))
+# Output: "Yllw pppy"
+
+# Modified behavior (removes 'y')
+print(remove_vowels("Yellow puppy", remove_y=True))
+# Output: "llw ppp"
 
 
 ## How to run unit tests

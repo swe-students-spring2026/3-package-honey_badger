@@ -142,10 +142,31 @@ Simple unit tests are included within the 'test' directory. This project uses py
 1. Run the tests from the main project directory: `python3 -m pytest`.
 1. Tests should not fail. If the tests fail, it means that the production code is behaving differently from the behavior the tests expect.
 
+## Install and Try the Package
+To install the package with `pip`, run:
+
+```bash
+pip install honey-badger-text-modifier
+```
+
+To install the package with `pipenv`, run:
+
+```bash
+pipenv install honey-badger-text-modifier
+```
+
+To try the package with the included demo program, run `example.py` from the project root:
+
+```bash
+python example.py
+```
+
+The demo walks through the package functions and also includes an interactive mode.
+
 
 ## How to calculate code coverage
 To check how much of the codebase is covered by unit tests, run:
-`python3 -m pytest --cov=.`
+`python3 -m pytest --cov=.` 
 
 
 ## Continuous integration

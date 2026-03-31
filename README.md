@@ -2,6 +2,8 @@
 
 # Text Modifier Package
 
+[PyPI URL](https://pypi.org/project/honey-badger-text-modifier/0.1.0/)
+
 ## Built by
 
 [Minho Eune](https://github.com/minhoeune)

@@ -12,6 +12,7 @@
 
 [Rehan Gupta](https://github.com/rehanguptaNYU)
 
+[Ani Guduru](https://github.com/AniGuduru)
 
 ## Features
 ### Block Font
@@ -28,6 +29,20 @@ Supported characters:
 - `,`
 
 The `scale` argument increases the size of the rendered output. Larger scale values make each character wider and taller.
+
+#### Example Usage:
+
+```python
+from textmodifier import block_text
+
+print(block_text("Hi!"))
+# Output:
+# #   # #####   #
+# #   #   #     #
+# #####   #     #
+# #   #   #
+# #   # #####   #
+```
 
 #### Known limitation
 
@@ -50,7 +65,7 @@ Arguments:
 #### Example Usage:
 
 ```python
-from src.textmodifier.functions import fixed_length_encode
+from textmodifier import fixed_length_encode
 
 encoded_text, mapping = fixed_length_encode("Hello", False, False,("👾", "🦭"))
 print(encoded_text)
@@ -71,15 +86,13 @@ Arguments:
 
 #### Example Usage:
 ```python 
-from src.textmodifier.functions import 
+from textmodifier import fixed_length_decode
 
 encoded_text = "FFFTTFTFTT"
 mapping = {'H': 'FF', 'e': 'FT', 'l': 'TF', 'o': 'TT'}
 print(fixed_length_decode(encoded_text, mapping))
 # Output: "Hello"
 ```
-
-
 
 ### Remove Vowels
 
@@ -93,7 +106,7 @@ Arguments:
 
 #### Example Usage:
 ```python
-from src.textmodifier.functions import remove_vowels
+from textmodifier import remove_vowels
 
 # Default behavior (keeps 'y')
 print(remove_vowels("Yellow puppy"))
@@ -103,21 +116,6 @@ print(remove_vowels("Yellow puppy"))
 print(remove_vowels("Yellow puppy", remove_y=True))
 # Output: "llw ppp"
 ```
-
-## How to run unit tests
-Simple unit tests are included within the 'test' directory. This project uses pytest. To run the tests:
-1. Install `pytest` into the virtual environment
-1. Run the tests from the main project directory: `python3 -m pytest`.
-1. Tests should not fail. If the tests fail, it means that the production code is behaving differently from the behavior the tests expect.
-
-
-## How to calculate code coverage
-To check how much of the codebase is covered by unit tests, run:
-`python3 -m pytest --cov=.`
-
-
-## Continuous integration
-This project has a continuous integration workflow that builds and runs unit tests automatically with every _push_ of the code to GitHub.
 
 ### Reverse Text
 
@@ -133,10 +131,22 @@ This function works for all characters in a string, including numbers ("5"), let
 #### Example Program
 
 ```python
-from src.textmodifier.functions import reverse_text
+from textmodifier import reverse_text
 
 print(reverse_text("hello"))  # Output: "olleh"
+```
+
+## How to run unit tests
+Simple unit tests are included within the 'test' directory. This project uses pytest. To run the tests:
+1. Install `pytest` into the virtual environment
+1. Run the tests from the main project directory: `python3 -m pytest`.
+1. Tests should not fail. If the tests fail, it means that the production code is behaving differently from the behavior the tests expect.
 
 
+## How to calculate code coverage
+To check how much of the codebase is covered by unit tests, run:
+`python3 -m pytest --cov=.`
 
 
+## Continuous integration
+This project has a continuous integration workflow that builds and runs unit tests automatically with every _pull request_ of the code to GitHub.

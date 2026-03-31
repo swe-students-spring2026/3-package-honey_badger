@@ -12,7 +12,9 @@ license = { file = "LICENSE" }
 authors = [
   { name = "Minho Eune" },
   { name = "Alejandro Fiestas" },
-  { name = "Diya Greben" }
+  { name = "Diya Greben" },
+  { name = "Rehan Gupta" },
+  { name = "Ani Guduru" }
 ]
 keywords = ["python", "text", "package", "utilities"]
 classifiers = [

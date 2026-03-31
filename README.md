@@ -10,6 +10,8 @@
 
 [Diya Greben](https://github.com/diyagreben)
 
+[Rehan Gupta](https://github.com/rehanguptaNYU)
+
 
 ## Features
 ### Block Font
@@ -82,3 +84,25 @@ To check how much of the codebase is covered by unit tests, run:
 
 ## Continuous integration
 This project has a continuous integration workflow that builds and runs unit tests automatically with every _push_ of the code to GitHub.
+
+### Reverse Text
+
+The function `reverse_text(text)` takes a string and returns a new string with all the characters in reverse order (left to right).
+
+**Arguments:**
+- `text` (str): The string to reverse
+
+#### Behavior
+
+This function works for all characters in a string, including numbers ("5"), letters ("h"), whitespace (" "), and special characters ("!").
+
+#### Example Program
+
+```python
+from src.textmodifier.functions import reverse_text
+
+print(reverse_text("hello"))  # Output: "olleh"
+
+
+
+

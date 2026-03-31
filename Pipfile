@@ -14,6 +14,3 @@ twine = "*"
 
 [requires]
 python_version = "3.13"
-
-[requires]
-python_version = "3.12"

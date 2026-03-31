@@ -31,7 +31,7 @@ The `scale` argument increases the size of the rendered output. Larger scale val
 
 Very long input strings or large `scale` values can produce extremely large outputs. Since the function builds the full rendered string in memory before returning it, performance or memory issues may happen for oversized output.
 
-### Fixed Length Encoding
+### Fixed Length Encode
 
 The function `fixed_length_encode(text, only_code=False, ignore_case=False, bit_style=("1", "0"))` encodes text into a binary-style string.
 
@@ -44,6 +44,40 @@ Arguments:
 - `ignore_case` (bool): If True, ignores capitalization (default is False).
 
 - `bit_style` (tuple): Allows custom characters to represent "1" and "0".
+
+#### Example Usage:
+
+```python
+from src.textmodifier.functions import fixed_length_encode
+
+encoded_text, mapping = fixed_length_encode("Hello", False, False,("👾", "🦭"))
+print(encoded_text)
+# Output: 🦭🦭🦭👾👾🦭👾🦭👾👾
+print(mapping)
+#Output: {'H': '🦭🦭', 'e': '🦭👾', 'l': '👾🦭', 'o': '👾👾'}
+
+print(fixed_length_encode("Hello World", True))
+# Output: 001100101101110000010110111101011
+```
+
+### Fixed Length Decode
+The function `fixed_length_decode(encoded_text, mapping)` decodes a binary-style text using the provided mapping.
+
+Arguments:
+- `encoded_text` (str): The encoded string to decode.
+- `mapping` (dict): The dictionary mapping original characters to their codes.
+
+#### Example Usage:
+```python 
+from src.textmodifier.functions import 
+
+encoded_text = "FFFTTFTFTT"
+mapping = {'H': 'FF', 'e': 'FT', 'l': 'TF', 'o': 'TT'}
+print(fixed_length_decode(encoded_text, mapping))
+# Output: "Hello"
+```
+
+
 
 ### Remove Vowels
 

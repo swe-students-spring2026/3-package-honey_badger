@@ -119,9 +119,9 @@ def fixed_length_encode(text, only_code=False, ignore_case=False, bit_style=("1"
    ignore_case (bool): Boolean to decide if ignoring capitalization. Default is False
    bit_style (tuple): Maps directly to (1, 0). Default is ("1", "0")
 
-   Returns:
-   str: Encoded text in custom bit style and optional mapping.
-
+   Returns: tuple or str
+   If only_code is False: returns a tuple containing the encoded text (str) and mapping (dict)
+   If only_code is True: returns only the encoded text (str)
  
    """
 
@@ -153,5 +153,46 @@ def fixed_length_encode(text, only_code=False, ignore_case=False, bit_style=("1"
    if only_code:
        return out
    else:
-       return (str(codes) + "\n" + out)
+       return out, codes
   
+def fixed_length_decode(encoded_text, mapping):
+    """
+    Decodes text using the provided mapping from a fixed lenght binary coding algorithm.
+    It relies on the fix code length to reconstruct the original string
+
+    Parameters:
+    encoded_text (str): The encoded string to decode.
+    mapping (dict): The dictionary mapping original characters to their codes.
+
+    Returns:
+    str: The decoded original text.
+    """
+
+    if not encoded_text or not mapping:
+        return ""
+
+    code_to_char = {}
+    for c, code in mapping.items():
+        code_to_char[code] = c
+
+    n = len(mapping)
+    bits = math.ceil(math.log2(n))
+    if bits == 0:
+        bits = 1
+
+    out = ""
+
+    for i in range(0, len(encoded_text), bits):
+        code = encoded_text[i:i + bits]
+        out += code_to_char[code]
+
+    return out
+        
+
+
+
+
+
+
+
+

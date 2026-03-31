@@ -12,9 +12,29 @@ license = { file = "LICENSE" }
 authors = [
   { name = "Minho Eune" }
 ]
+keywords = ["python", "text", "package", "utilities"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Intended Audience :: Education",
+  "Operating System :: OS Independent",
+]
 dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest", "build", "twine"]
+
+[project.urls]
+Homepage = "https://github.com/swe-students-spring2026/3-package-honey_badger"
+Repository = "https://github.com/swe-students-spring2026/3-package-honey_badger.git"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 testpaths = ["tests"]
-

@@ -1,5 +1,5 @@
 import pytest 
-from src.functions import reverse_text
+from src.textmodifier.functions import reverse_text
 def test_reversing():
     assert reverse_text("hello")=="olleh"
 def test_empty():

@@ -5,9 +5,11 @@
 ## Built by
 
 [Minho Eune](https://github.com/minhoeune)
+[Alejandro Fiestas](https://github.com/avf8449)
 
 
-## Block Font
+## Features
+### Block Font
 
 The main function, `block_text(text, scale=1)`, takes a string and returns a block-font version of that text. Input is converted to uppercase before rendering, so lowercase and uppercase letters behave the same.
 
@@ -22,10 +24,36 @@ Supported characters:
 
 The `scale` argument increases the size of the rendered output. Larger scale values make each character wider and taller.
 
-### Known limitation
+#### Known limitation
 
 Very long input strings or large `scale` values can produce extremely large outputs. Since the function builds the full rendered string in memory before returning it, performance or memory issues may happen for oversized output.
 
-## Continuous integration
+### Fixed Length Encoding
 
+The function `fixed_length_encode(text, only_code=False, ignore_case=False, bit_style=("1", "0"))` encodes text into a binary-style string.
+
+Arguments:
+
+- `text` (str): The text to encode.
+
+- `only_code` (bool): If True, returns only the encoded string without the character mapping (default is False).
+
+- `ignore_case` (bool): If True, ignores capitalization (default is False).
+
+- `bit_style` (tuple): Allows custom characters to represent "1" and "0".
+
+
+## How to run unit tests
+Simple unit tests are included within the 'test' directory. This project uses pytest. To run the tests:
+1. Install `pytest` into the virtual environment
+1. Run the tests from the main project directory: `python3 -m pytest`.
+1. Tests should not fail. If the tests fail, it means that the production code is behaving differently from the behavior the tests expect.
+
+
+## How to calculate code coverage
+To check how much of the codebase is covered by unit tests, run:
+`python3 -m pytest --cov=.`
+
+
+## Continuous integration
 This project has a continuous integration workflow that builds and runs unit tests automatically with every _push_ of the code to GitHub.
